@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo CSS na Prática</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilos para o menu de navegação */
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para as seções */
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background-color: #eeeeee;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" target="_black">Inicio</a></li>
+            <li><a href="#introducao">Introdução ao CSS</a></li>
+            <li><a href="#como-aplicar">Como Aplicar CSS</a></li>
+            <li><a href="#seletores">Seletores e Propriedades</a></li>
+            <li><a href="#exercicio">Exercício Prático</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção 1: Introdução ao CSS -->
+    <section id="introducao">
+        <h2>Introdução ao CSS</h2>
+        <p>CSS (Cascading Style Sheets) é a linguagem usada para estilizar páginas HTML. Com ele, você pode controlar cores, fontes, espaçamentos e muito mais.</p>
+    </section>
+
+    <!-- Seção 2: Como Aplicar CSS -->
+    <section id="como-aplicar">
+        <h2>Como Aplicar CSS em um Documento HTML</h2>
+        <p>Existem três maneiras de adicionar CSS a um documento HTML:</p>
+        <ul>
+            <li><strong>Inline:</strong> Usando o atributo <code>style</code> diretamente nos elementos HTML.</li>
+            <li><strong>Interno:</strong> Adicionando um bloco <code>&lt;style&gt;</code> dentro da tag <code>&lt;head&gt;</code>.</li>
+            <li><strong>Externo:</strong> Usando um arquivo CSS separado.</li>
+        </ul>
+        <pre>
+/* Exemplo de estilo interno */
+&lt;style&gt;
+    p {
+        color: blue;
+    }
+&lt;/style&gt;
+        </pre>
+    </section>
+
+    <!-- Seção 3: Seletores e Propriedades -->
+    <section id="seletores">
+        <h2>Seletores e Propriedades</h2>
+        <p>CSS usa seletores para aplicar estilos a elementos. Aqui estão alguns exemplos:</p>
+        <ul>
+            <li><strong>Seletores de tag:</strong> <code>p</code>, <code>h1</code>, etc.</li>
+            <li><strong>Seletores de classe:</strong> <code>.minha-classe</code></li>
+            <li><strong>Seletores de ID:</strong> <code>#meu-id</code></li>
+        </ul>
+        <pre>
+/* Exemplo de uso */
+p {
+    color: green;
+}
+.minha-classe {
+    background-color: yellow;
+}
+#meu-id {
+    font-size: 20px;
+}
+        </pre>
+    </section>
+
+    <!-- Seção 4: Exercício Prático -->
+    <section id="exercicio">
+        <h2>Exercício Prático</h2>
+        <p>Experimente aplicar estilos ao quadrado abaixo usando o campo de entrada:</p>
+        <input type="text" id="cor-input" placeholder="Digite uma cor (ex: red, #123456)">
+        <button onclick="aplicarEstilo()">Aplicar Cor</button>
+        <div class="box" id="caixa">Caixa</div>
+        <script>
+            function aplicarEstilo() {
+                const cor = document.getElementById('cor-input').value;
+                const caixa = document.getElementById('caixa');
+                caixa.style.backgroundColor = cor || 'lightgray';
+            }
+        </script>
+    </section>
+</section>
+
+<!-- Seção 4: Exercício Prático -->
+<section id="exercicio">
+    <h2>Exercício Prático</h2>
+    <p>Tente criar um arquivo HTML e um arquivo CSS para estilizar uma página. Use o código abaixo como referência:</p>
+    <pre>
+&lt;!-- Arquivo HTML (index.html) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Minha Página com CSS&lt;/title&gt;
+    &lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao CSS!&lt;/h1&gt;
+    &lt;p class="destaque"&gt;Este é um parágrafo estilizado.&lt;/p&gt;
+    &lt;p id="importante"&gt;Este é um parágrafo importante.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    <pre>
+/* Arquivo CSS (estilos.css) */
+body {
+background-color: #f0f8ff;
+}
+h1 {
+color: #0066cc;
+}
+.destaque {
+color: #ff6347;
+font-weight: bold;
+}
+#importante {
+color: #2e8b57;
+text-decoration: underline;
+}
+    </pre>
+    <p>Salve o HTML como <code>index.html</code> e o CSS como <code>estilos.css</code> na mesma pasta. Abra o arquivo HTML no seu navegador para ver o resultado.</p>
+</section>
+</body>
+</html>

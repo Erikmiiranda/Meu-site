@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JavaScript na Prática</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para as seções */
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background-color: #eeeeee;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" target="_black">Inicio</a></li>
+            <li><a href="#introducao">Introdução ao JavaScript</a></li>
+            <li><a href="#inserir-js">Inserindo JavaScript</a></li>
+            <li><a href="#eventos">Manipulação de Elementos</a></li>
+            <li><a href="#exercicio">Exercício Prático</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção 1: Introdução ao JavaScript -->
+    <section id="introducao">
+        <h2>Introdução ao JavaScript</h2>
+        <p>JavaScript é uma linguagem de programação usada para tornar páginas web interativas. Com ele, você pode responder a eventos do usuário, validar formulários, criar animações e muito mais.</p>
+    </section>
+
+    <!-- Seção 2: Como inserir JavaScript -->
+    <section id="inserir-js">
+        <h2>Como Inserir JavaScript em uma Página HTML</h2>
+        <p>Existem três maneiras principais de adicionar JavaScript a um documento HTML:</p>
+        <ul>
+            <li><strong>Inline:</strong> Usando o atributo <code>onclick</code> ou outras propriedades diretamente nos elementos HTML.</li>
+            <li><strong>Interno:</strong> Adicionando um bloco de <code>&lt;script&gt;</code> dentro da página.</li>
+            <li><strong>Externo:</strong> Linkando um arquivo JavaScript separado usando <code>&lt;script src="script.js"&gt;</code>.</li>
+        </ul>
+        <pre>
+&lt;!-- Exemplo de script interno --&gt;
+&lt;script&gt;
+    console.log("Olá, Mundo!");
+&lt;/script&gt;
+        </pre>
+    </section>
+
+    <!-- Seção 3: Manipulação de Elementos e Eventos -->
+    <section id="eventos">
+        <h2>Manipulação de Elementos e Eventos</h2>
+        <p>Você pode usar JavaScript para manipular elementos da página e responder a eventos do usuário, como cliques em botões. Por exemplo:</p>
+        <pre>
+&lt;button onclick="mostrarMensagem()"&gt;Clique aqui&lt;/button&gt;
+
+&lt;script&gt;
+function mostrarMensagem() {
+    alert("Você clicou no botão!");
+}
+&lt;/script&gt;
+        </pre>
+    </section>
+
+    <!-- Seção 4: Exercício Prático -->
+    <section id="exercicio">
+        <h2>Exercício Prático Interativo</h2>
+        <p>Tente interagir com o código abaixo. Digite um número para ver o resultado do dobro desse número:</p>
+        <input type="number" id="numero" placeholder="Digite um número" />
+        <button onclick="calcularDobro()">Calcular Dobro</button>
+        <div id="output"></div>
+        <script>
+            function calcularDobro() {
+                const input = document.getElementById('numero');
+                const output = document.getElementById('output');
+                const numero = parseFloat(input.value);
+                
+                if (isNaN(numero)) {
+                    output.textContent = "Por favor, insira um número válido!";
+                } else {
+                    output.textContent = "O dobro de " + numero + " é " + (numero * 2) + ".";
+                }
+            }
+        </script>
+    </section>
+</body>
+</html>

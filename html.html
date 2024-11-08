@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo HTML na Prática</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilos para o menu de navegação */
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para as seções */
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background-color: #eeeeee;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" target="_black">Inicio</a></li>
+            <li><a href="#introducao">Introdução ao HTML</a></li>
+            <li><a href="#estrutura">Estrutura HTML</a></li>
+            <li><a href="#tags">Principais Tags</a></li>
+            <li><a href="#exercicio">Exercício Prático</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção 1: Introdução ao HTML -->
+    <section id="introducao">
+        <h2>Introdução ao HTML</h2>
+        <p>HTML (HyperText Markup Language) é a linguagem usada para criar a estrutura de páginas web. É a base de todo conteúdo da web.</p>
+    </section>
+
+    <!-- Seção 2: Estrutura Básica -->
+    <section id="estrutura">
+        <h2>Estrutura Básica de uma Página HTML</h2>
+        <p>Uma página HTML é composta por diversas tags que definem seu conteúdo. Aqui está um exemplo básico:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Minha Página&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
+
+    <!-- Seção 3: Principais Tags e Elementos -->
+    <section id="tags">
+        <h2>Principais Tags e Elementos</h2>
+        <ul>
+            <li><code>&lt;p&gt;</code>: Parágrafo de texto.</li>
+            <li><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>: Títulos de diferentes níveis.</li>
+            <li><code>&lt;a&gt;</code>: Link para outra página.</li>
+            <li><code>&lt;img&gt;</code>: Imagem.</li>
+            <li><code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code>: Lista não ordenada.</li>
+            <li><code>&lt;table&gt;</code>: Tabela.</li>
+        </ul>
+    </section>
+
+    <!-- Seção 4: Exercício Prático -->
+    <section id="exercicio">
+        <h2>Exercício Prático</h2>
+        <p>Experimente adicionar um elemento HTML à página usando o campo abaixo:</p>
+        <input type="text" id="html-input" placeholder="Digite uma tag (ex: &lt;p&gt;Olá!&lt;/p&gt;)" />
+        <button onclick="adicionarElemento()">Adicionar Elemento</button>
+        <div id="output"></div>
+        <script>
+            function adicionarElemento() {
+                const input = document.getElementById('html-input').value;
+                const output = document.getElementById('output');
+                
+                if (input.trim() === '') {
+                    alert("Por favor, insira uma tag HTML válida!");
+                    return;
+                }
+
+                // Criar um novo elemento a partir do conteúdo inserido
+                const novoElemento = document.createElement('div');
+                novoElemento.innerHTML = input;
+                output.appendChild(novoElemento);
+            }
+        </script>
+    </section>
+    <section id="exercicio">
+        <h2>Exercício Prático</h2>
+        <p>Tente criar seu próprio documento HTML com o seguinte conteúdo:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Minha Primeira Página&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Bem-vindo ao HTML!&lt;/h1&gt;
+        &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <p>Abra o seu editor de texto (como o Notepad) e salve o código acima como <code>pagina.html</code>. Em seguida, abra o arquivo no seu navegador.</p>
+    </section>
+</body>
+</html>
